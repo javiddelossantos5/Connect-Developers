@@ -14,6 +14,7 @@ module.exports = function(req, res, next) {
     try {
         const decoded = jwt.verify(token, config.get('jwtSecret'));
 
+        // Puts decoded user into req.user so it will be decoded when we call req.user
         req.user = decoded.user;
         next();
 

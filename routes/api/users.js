@@ -68,7 +68,7 @@ async (req, res) => {
         jwt.sign(
             payload, 
             config.get('jwtSecret'),
-            { expiresIn: 3600 },
+            { expiresIn: 3600000 },
             (err, token) => {
                 if (err) throw err;
                 res.json({ token });
@@ -78,8 +78,6 @@ async (req, res) => {
         console.error(err.message);
         res.status(500).send('Server error');
     }
-
-
 });
 
 module.exports = router;
