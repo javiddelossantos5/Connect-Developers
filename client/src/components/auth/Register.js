@@ -17,26 +17,7 @@ const Register = () => {
     e.preventDefault();
     console.log(formData);
 
-    const newUser = {
-      name,
-      email,
-      password
-    }
-
-    try {
-      const config = {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-
-      const body = JSON.stringify(newUser);
-
-      const res = await axios.post("/api/users", newUser);
-        console.log(res.data);
-    } catch (err) {
-      console.error(err.response.data);
-    }
+    console.log(`Success`);
 
   }
 
@@ -44,7 +25,7 @@ const Register = () => {
     <Fragment>
       <h1 className='large text-primary'>Sign Up</h1>
       <p className='lead'>
-        <i className='fas fa-user'></i> Create Your Account
+        Create Your Account
       </p>
       <form className='form' onSubmit={e => onSubmit(e)} >
         <div className='form-group'>
@@ -82,14 +63,6 @@ const Register = () => {
             required
           />
         </div>
-        {/* <div className='form-group'>
-          <input
-            type='password'
-            placeholder='Confirm Password'
-            name='password2'
-            minLength='6'
-          />
-        </div> */}
         <input type='submit' className='btn btn-primary' value='Register' />
       </form>
     </Fragment>
