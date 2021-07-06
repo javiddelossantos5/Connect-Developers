@@ -38,11 +38,14 @@ async (req, res) => {
         }
     
         // Get users gravatar
-        const avatar = gravatar.url(email, {
-            s: '200',
-            r: 'pg',
-            d: 'mm'
-        })
+        const avatar = normalize(
+            gravatar.url(email, {
+              s: '200',
+              r: 'pg',
+              d: 'mm'
+            }),
+            { forceHttps: true }
+          );
 
         user = new User({
             name,
