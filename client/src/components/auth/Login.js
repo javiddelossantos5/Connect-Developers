@@ -1,7 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { login } from '../../actions/auth'; 
+import { Redirect, Link } from 'react-router-dom';
 
-const Login = () => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -17,7 +21,14 @@ const Login = () => {
 
     console.log(`Success`);
 
+    login(email, password);
+
   };
+
+  // Redirect if logged in
+  if (isAuthenticated) {
+    return <Redirect to='/dashboard'/>
+  }
 
   return (
     <Fragment>
@@ -53,5 +64,16 @@ const Login = () => {
   );
 };
 
-export default Login;
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+}
+
+const mapStateToProps = state => ({
+  // Check to see if the user in authenticated to redirect to homepage
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+
+export default connect(mapStateToProps, { login })(Login);
 
