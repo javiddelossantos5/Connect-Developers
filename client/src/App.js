@@ -7,7 +7,9 @@ import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Alert from './components/layout/Alert';
 import Dashboard from './components/dashboard/Dashboard';
+import CreateProfile from './components/profile-forms/CreateProfile';
 import PrivateRoute from './components/router/PrivateRoute';
+
 
 
 
@@ -41,6 +43,7 @@ const App = () => {
             <Route exact path='/register' component={ Register } /> 
             {/* Makes sure the user is authenticated or else brings them back to the login to get to the dashboard/homepage */}
             <PrivateRoute exact path='/dashboard' component={ Dashboard } /> 
+            <PrivateRoute exact path='/create-profile' component={ CreateProfile } /> 
             </Switch>
           </section>
         </Fragment>
