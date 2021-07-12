@@ -11,7 +11,7 @@ import CreateProfile from './components/profile-forms/CreateProfile';
 import EditProfile from './components/profile-forms/EditProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
-
+import Profiles from './components/profiles/Profiles';
 import PrivateRoute from './components/router/PrivateRoute';
 
 // Redux
@@ -41,6 +41,7 @@ const App = () => {
             <Switch>
               <Route exact path='/login' component={Login} />
               <Route exact path='/register' component={Register} />
+              <Route exact path='/profiles' component={Profiles} />
               {/* Makes sure the user is authenticated or else brings them back to the login to get to the dashboard/homepage */}
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
               <PrivateRoute
