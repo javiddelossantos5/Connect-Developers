@@ -6,9 +6,6 @@ import Spinner from '../layout/Spinner';
 import PostItem from './PostItem';
 import PostForm from './PostForm';
 
-
-import { post } from 'request';
-
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
     getPosts();
@@ -25,7 +22,6 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
         {posts.map((post) => (
           <PostItem key={post._id} post={post} />
         ))}
-        ;
       </div>
     </Fragment>
   );
