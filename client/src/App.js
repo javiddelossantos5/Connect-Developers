@@ -48,7 +48,7 @@ const App = () => {
               <Route exact path='/profiles' component={Profiles} />
               <Route exact path='/profile/:id' component={Profile} />
               {/* Makes sure the user is authenticated or else brings them back to the login to get to the dashboard/homepage */}
-              <PrivateRoute exact path='/dashboard' component={Dashboard} />
+              <Route exact path='/dashboard' component={Dashboard} />
               <PrivateRoute
                 exact
                 path='/create-profile'

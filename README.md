@@ -23,4 +23,4 @@ npm run dev
 ```
 
 ## Demo of app
- You can view a walkthrough video of the app [here]()
+ You can view a walkthrough video of the app [here](https://drive.google.com/file/d/1zUThty00uui4pZ6PBPZJAgnu5TTdGIZD/view?usp=sharing)
