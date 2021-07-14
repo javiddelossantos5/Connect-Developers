@@ -9,7 +9,7 @@ import { getPost } from '../../actions/post';
 const Post = ({ getPost, post: { post, loading }, match }) => {
     useEffect(() => {
         getPost(match.params.id);
-    }, [getPost])
+    }, [getPost, match.params.id])
 
     return loading || post === null ? <Spinner /> : <Fragment>
         <Link to='/posts' className='btn'>
